@@ -54,8 +54,8 @@ class SquarizeImage:
         return mask * new_img + (1. - mask) * img_orig
 
 if __name__ == '__main__':
-    img = cv2.imread('C:/Users/pavan/Desktop/apple_output.jpg', cv2.IMREAD_COLOR)
-    mask = cv2.imread('C:/Users/pavan/Desktop/apple_output.jpg', cv2.IMREAD_GRAYSCALE)
+    img = cv2.imread('/content/my-repo/relighting_humans_codes/img_sqr.png', cv2.IMREAD_COLOR)
+    mask = cv2.imread('/content/my-repo/relighting_humans_codes/mask_sqr.png', cv2.IMREAD_GRAYSCALE)
 
     print('img.shape = {}'.format(img.shape))
 
@@ -63,10 +63,10 @@ if __name__ == '__main__':
 
     img_square = si.get_squared_image()
 
-    cv2.imwrite('img_sqr.png', img_square)
-    cv2.imwrite('mask_sqr.png', si.get_squared_mask())
+    cv2.imwrite('/content/my-repo/relighting_humans_codes/resized_images/img_sqr.png', img_square)
+    cv2.imwrite('/content/my-repo/relighting_humans_codes/resized_images/mask_sqr.png', si.get_squared_mask())
     
     img_square = cv2.cvtColor(img_square, cv2.COLOR_BGR2RGB)
     img_replaced = si.replace_image(img, mask, img_square)
     
-    cv2.imwrite('new_img.png', img_replaced)
+    cv2.imwrite('/content/my-repo/relighting_humans_codes/resized_images/new_img.png', img_replaced)

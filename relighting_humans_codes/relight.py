@@ -10,11 +10,11 @@ import sh_rot
 import argparse
 
 parser = argparse.ArgumentParser(description='Relighting images')
-parser.add_argument('--gpu', '-g', default=-1, type=int, help='GPU ID (negative value indicates CPU)')
+parser.add_argument('--gpu', '-g', default=0, type=int, help='GPU ID (negative value indicates CPU)')
 parser.add_argument('--shading', '-s', default=False, type=bool, help='Toggle shading animation')
-parser.add_argument('--in_dir', '-i', default='photo_outputs', help='Input directory')
-parser.add_argument('--out_dir', '-o', default='relighting_outputs', help='Output directory')
-parser.add_argument('--light_path', '-l', default='test_lights/cluster08.npy', help='Input directory')
+parser.add_argument('--in_dir', '-i', default='/content/my-repo/relighting_humans_codes/photo_outputs', help='Input directory')
+parser.add_argument('--out_dir', '-o', default='/content/my-repo/relighting_humans_codes/relighting_outputs', help='Output directory')
+parser.add_argument('--light_path', '-l', default='/content/my-repo/relighting_humans_codes/test_lights/cluster08.npy', help='Input directory')
 
 args = parser.parse_args()
 

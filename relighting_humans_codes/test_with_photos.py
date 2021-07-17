@@ -13,10 +13,10 @@ from SquarizeImage import SquarizeImage
 import argparse
 
 parser = argparse.ArgumentParser(description='Relighting humans')
-parser.add_argument('--gpu', '-g', default=-1, type=int, help='GPU ID (negative value indicates CPU)')
-parser.add_argument('--in_dir', '-i', default='photo_inputs', help='Input directory')
-parser.add_argument('--out_dir', '-o', default='photo_outputs', help='Output directory')
-parser.add_argument('--model_path', '-p', default='models/model_060.chainer', help='Model path')
+parser.add_argument('--gpu', '-g', default=0, type=int, help='GPU ID (negative value indicates CPU)')
+parser.add_argument('--in_dir', '-i', default='/content/my-repo/relighting_humans_codes/photo_inputs', help='Input directory')
+parser.add_argument('--out_dir', '-o', default='/content/my-repo/relighting_humans_codes/photo_outputs', help='Output directory')
+parser.add_argument('--model_path', '-p', default='/content/my-repo/relighting_humans_codes/models/model_060.chainer', help='Model path')
 
 args = parser.parse_args()
 
